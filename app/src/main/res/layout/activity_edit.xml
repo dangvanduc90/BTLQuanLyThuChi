@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="blahblah.hihi.btl.EditActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mục" />
+
+    <EditText
+        android:id="@+id/editmuc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nội dung" />
+
+    <EditText
+        android:id="@+id/editnoidung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số tiền " />
+
+    <EditText
+        android:id="@+id/editsotien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textngay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày" />
+
+    <EditText
+        android:id="@+id/editngay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnuChi"
+        android:title="Chi"></item>
+    <item android:title="Thu"
+        android:id="@+id/mnuThu"></item>
+    <item android:id="@+id/mnuQuanLyTien"
+        android:title="Quản lý tiền"></item>
+    <item android:title="Hướng dẫn"
+        android:id="@+id/mnuHuongDan"></item>
+    <item android:title="Thông tin"
+        android:id="@+id/mnuThongTin"></item>
+</menu>

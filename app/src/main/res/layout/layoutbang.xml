@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/tvTieude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tiêu đề"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvNoiDung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="3"
+            android:gravity="end"
+            android:text="Nội dung"
+            android:textSize="24sp" />
+    </TableRow>
+</LinearLayout>
