@@ -13,21 +13,9 @@
         android:layout_height="wrap_content"
         android:text="Tổng số tiền của bạn là: " />
 
-    <!--<ListView-->
-        <!--android:id="@+id/lvDanhSach"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="473dp" />-->
-
-    <Button
-        android:id="@+id/btnThu"
-        android:text="Thu"
+    <ListView
+        android:id="@+id/lvDanhSach"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnChi"
-        android:text="Chi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="473dp" />
 
 </LinearLayout>
