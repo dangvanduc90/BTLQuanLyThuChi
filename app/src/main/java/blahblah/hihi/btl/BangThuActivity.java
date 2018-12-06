@@ -1,6 +1,7 @@
 package blahblah.hihi.btl;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,10 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import blahblah.hihi.btl.adapter.BangAdapter;
@@ -23,6 +26,10 @@ public class BangThuActivity extends Activity {
     BangAdapter adapter;
     Bang mucthu,diengiai,ngay,sotien;
     Intent intent;
+
+    Calendar calendar;
+    private int mYear, mMonth, mDay, mHour, mMinute, maLoaiCV, thoiGianLap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +63,22 @@ public class BangThuActivity extends Activity {
                     case 2:
                         Intent intent2 = new Intent(BangThuActivity.this,ThemTien.class);
                         startActivityForResult(intent2,2);
+                        break;
+                    case 3:
+
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(BangThuActivity.this, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+//                                edtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                                mYear = year;
+                                mMonth = month;
+                                mDay = dayOfMonth;
+                                calendar.set(mYear, mMonth, mDay);
+                                ngay = new Bang("Ngày: ",new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+                                update();
+                            }
+                        }, mYear, mMonth, mDay);
+                        datePickerDialog.show();
                         break;
                 }
 
@@ -125,5 +148,12 @@ public class BangThuActivity extends Activity {
         lvBang = (ListView) findViewById(R.id.lvBang);
         adapter = new BangAdapter(this,R.layout.layoutbang);
         lvBang.setAdapter(adapter);
+
+        calendar = Calendar.getInstance();
+        mYear = calendar.get(Calendar.YEAR);
+        mMonth = calendar.get(Calendar.MONTH);
+        mDay = calendar.get(Calendar.DAY_OF_MONTH);
+        mHour = calendar.get(Calendar.HOUR_OF_DAY);
+        mMinute = calendar.get(Calendar.MINUTE);
     }
 }
