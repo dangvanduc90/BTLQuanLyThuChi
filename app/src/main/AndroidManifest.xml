@@ -30,7 +30,8 @@
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".BangThuActivity" />
         <activity android:name=".EditActivity" />
-        <activity android:name=".ChiTietActivity"></activity>
+        <activity android:name=".ChiTietActivity" />
+        <activity android:name=".DanhSachChiTienActivity"></activity>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     TextView sotien;
     Tien tien;
     MainAdapter adapter;
-    MainDanhSach mainDanhSach;
+    MainDanhSach mainDanhSach, mainDanhSach1;
     Button btnThu, btnChi;
     int pos;
     @Override
@@ -70,6 +70,14 @@ public class MainActivity extends Activity {
                 startActivity(intent5);
                 break;
 
+            case R.id.mnuDanhSachChi:
+                Intent intent = new Intent(MainActivity.this, DanhSachChiTienActivity.class);
+                Bundle informacion = new Bundle();
+                informacion.putSerializable("eventos", mainDanhSach1);
+                intent.putExtras(informacion);
+                startActivity(intent);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -80,6 +88,7 @@ public class MainActivity extends Activity {
         if (requestCode==1 && resultCode==1){
             mainDanhSach = new MainDanhSach();
             mainDanhSach = (MainDanhSach) data.getSerializableExtra("chi");
+            mainDanhSach1 = mainDanhSach;
             adapter.add(mainDanhSach);
             tien.setSoTien(tien.getSoTien()-mainDanhSach.getSotien());
             Toast.makeText(this,"-"+mainDanhSach.getSotien(), Toast.LENGTH_LONG).show();
@@ -170,28 +179,6 @@ public class MainActivity extends Activity {
     }
 
     private void addEvents() {
-        btnThu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DanhSachThuTienActivity.class);
-
-                Bundle informacion = new Bundle();
-                informacion.putSerializable("eventos", mainDanhSach);
-                intent.putExtras(informacion);
-                startActivity(intent);
-            }
-        });
-
-        btnChi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DanhSachChiTienActivity.class);
-                Bundle informacion = new Bundle();
-                informacion.putSerializable("eventos", mainDanhSach);
-                intent.putExtras(informacion);
-                startActivity(intent);
-            }
-        });
     }
 
     private void addControls() { //khai báo các thứ
@@ -208,9 +195,6 @@ public class MainActivity extends Activity {
 //        adapter.add(new MainDanhSach("Test 3","dien giai 3","16-11-1997","Chi",10000,R.drawable.chi));
 //        adapter.add(new MainDanhSach("Test 4","dien giai 4","16-11-1997","Thu",10000,R.drawable.thu));
 //        adapter.add(new MainDanhSach("Tesst 5","dien giai 5","16-11-1997","Chi",10000,R.drawable.chi));
-
-        btnThu = findViewById(R.id.btnThu);
-        btnChi = findViewById(R.id.btnChi);
     }
 
 }

@@ -11,4 +11,6 @@
         android:id="@+id/mnuHuongDan"></item>
     <item android:title="Thông tin"
         android:id="@+id/mnuThongTin"></item>
+    <item android:title="Danh sách Chi"
+        android:id="@+id/mnuDanhSachChi"></item>
 </menu>
