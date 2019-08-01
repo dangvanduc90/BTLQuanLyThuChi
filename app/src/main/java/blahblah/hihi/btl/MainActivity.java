@@ -179,6 +179,21 @@ public class MainActivity extends Activity {
     }
 
     private void addEvents() {
+        btnThu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this, BangThuActivity.class);
+                startActivityForResult(intent2,2);
+            }
+        });
+        btnChi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MainActivity.this, BangChiActivity.class);
+                intent1.putExtra("tien",tien.getSoTien());
+                startActivityForResult(intent1,1);
+            }
+        });
     }
 
     private void addControls() { //khai báo các thứ
@@ -189,6 +204,8 @@ public class MainActivity extends Activity {
 //        lvDanhSach.setAdapter(adapter);
 //        registerForContextMenu(lvDanhSach);
         sotien =  findViewById(R.id.textView2);
+        btnThu =  findViewById(R.id.btnThu);
+        btnChi =  findViewById(R.id.btnChi);
         sotien.setText("Tổng số tiền là: "+ tien.getSoTien());
 //        adapter.add(new MainDanhSach("Test 1","dien giai 1","13-04-1997","Chi",10000,R.drawable.chi));
 //        adapter.add(new MainDanhSach("Test 2","dien giai 2","16-11-1997","Thu",10000,R.drawable.thu));

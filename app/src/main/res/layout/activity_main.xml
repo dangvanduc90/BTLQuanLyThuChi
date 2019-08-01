@@ -17,5 +17,21 @@
         android:id="@+id/lvDanhSach"
         android:layout_width="match_parent"
         android:layout_height="473dp" />
-
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnThu"
+            android:text="Thu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_marginLeft="100px"
+            android:id="@+id/btnChi"
+            android:text="Chi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
